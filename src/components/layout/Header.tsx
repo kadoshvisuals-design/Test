@@ -12,7 +12,8 @@ import {
   Menu, 
   X,
   SlidersHorizontal,
-  Flame
+  Flame,
+  Download
 } from 'lucide-react';
 import { ElevationState } from '../../types/optiwin';
 
@@ -147,6 +148,16 @@ export const Header: React.FC<HeaderProps> = ({
           <RotateCcw size={13} />
           <span className="hidden md:inline">REVERTER</span>
         </button>
+
+        <a
+          href="/OptiWinX.exe"
+          download="OptiWinX.exe"
+          title="Baixar aplicativo executável compilado para Windows 10/11 x64"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-lg bg-[#00E5FF] text-black hover:bg-[#38EAFF] transition-all whitespace-nowrap cursor-pointer shadow-md shadow-[#00E5FF]/20"
+        >
+          <Download size={13} />
+          <span>Baixar .EXE</span>
+        </a>
       </div>
     </header>
   );

@@ -13,7 +13,9 @@ import {
 import { 
   Cpu, 
   Activity, 
-  ArrowRight
+  ArrowRight,
+  Download,
+  Sparkles
 } from 'lucide-react';
 
 interface DashboardViewProps {
@@ -117,6 +119,46 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             }`}
           >
             REVERTER
+          </button>
+        </div>
+      </div>
+
+      {/* Banner de Apresentação e Download do Executável Nativo Windows .EXE */}
+      <div className="bg-gradient-to-r from-[#17272F] via-[#1E2328] to-[#1E1E1E] border border-[#00E5FF]/40 rounded-xl p-4 md:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-lg shadow-[#00E5FF]/5">
+        <div className="flex items-start sm:items-center gap-3.5">
+          <div className="w-10 h-10 rounded-xl bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] shrink-0">
+            <Download size={20} />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-bold text-white tracking-tight">
+                Aplicativo Nativo Windows (.EXE) Pronto para Execução
+              </span>
+              <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[#00E5FF]/20 text-[#00E5FF] border border-[#00E5FF]/40 uppercase">
+                x64 Nativo
+              </span>
+            </div>
+            <p className="text-xs text-neutral-300 mt-0.5">
+              OptiWinX compilado em C++20 com vinculação estática (zero dependências de DLLs). Inclui GUI Fluent Dark e linha de comando CLI.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2.5 shrink-0 flex-wrap">
+          <a
+            href="/OptiWinX.exe"
+            download="OptiWinX.exe"
+            className="px-4 py-2 rounded-lg bg-[#00E5FF] hover:bg-[#38EAFF] text-black font-bold text-xs flex items-center gap-2 transition-all shadow-md shadow-[#00E5FF]/20 cursor-pointer"
+          >
+            <Download size={14} />
+            <span>Baixar OptiWinX.exe (1,4 MB)</span>
+          </a>
+          <button
+            onClick={() => onSwitchTab('download')}
+            className="px-3.5 py-2 rounded-lg bg-[#282828] hover:bg-[#333333] text-neutral-200 border border-[#3E3E3E] text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
+          >
+            <span>Central de Downloads e Guia</span>
+            <ArrowRight size={13} />
           </button>
         </div>
       </div>

@@ -29,18 +29,18 @@
 using namespace OptiWin;
 
 static void PrintHelp() {
-    std::cout << "OptiWinX Native Windows Optimizer v" << APP_VERSION << "\n";
-    std::cout << "Target: " << APP_BUILD_TARGET << "\n\n";
-    std::cout << "Usage:\n";
-    std::cout << "  OptiWinX.exe                 Launch Native Windows Desktop GUI\n";
-    std::cout << "  OptiWinX.exe --analyze       Inspect hardware, memory, and performance state\n";
-    std::cout << "  OptiWinX.exe --dry-run       Simulate proposed optimizations (0 modifications)\n";
-    std::cout << "  OptiWinX.exe --gaming        Activate Gaming Mode with transaction tracking\n";
-    std::cout << "  OptiWinX.exe --rollback      Restore all active modified processes to original state\n";
-    std::cout << "  OptiWinX.exe --diagnostics   Generate comprehensive system telemetry report\n";
-    std::cout << "  OptiWinX.exe --cleanup       Audit and clean temporary caches\n";
-    std::cout << "  OptiWinX.exe --version       Display version and build metadata\n\n";
-    std::cout << "Safety Standard: Zero fake counters, verified rollbacks, strict process protection.\n";
+    std::cout << "OptiWinX - Otimizador e Diagnostico Nativo do Windows v" << APP_VERSION << "\n";
+    std::cout << "Destino: " << APP_BUILD_TARGET << "\n\n";
+    std::cout << "Uso:\n";
+    std::cout << "  OptiWinX.exe                 Inicia a Interface Grafica Nativa (GUI Fluent Dark)\n";
+    std::cout << "  OptiWinX.exe --analyze       Analisa hardware, memoria e estado do sistema\n";
+    std::cout << "  OptiWinX.exe --dry-run       Simula otimizacoes propostas (0 modificacoes)\n";
+    std::cout << "  OptiWinX.exe --gaming        Ativa o Modo Jogo com rastreamento no diario\n";
+    std::cout << "  OptiWinX.exe --rollback      Restaura processos modificados para os estados originais\n";
+    std::cout << "  OptiWinX.exe --diagnostics   Gera relatorio abrangente de telemetria\n";
+    std::cout << "  OptiWinX.exe --cleanup       Audita e remove caches temporarios com seguranca\n";
+    std::cout << "  OptiWinX.exe --version       Exibe metadados de versao e compilacao\n\n";
+    std::cout << "Padrao de Seguranca: Zero contadores falsos, reversoes verificadas e protecao estrita de processos.\n";
 }
 
 int main(int argc, char* argv[]) {

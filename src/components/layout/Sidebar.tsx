@@ -14,12 +14,14 @@ import {
   FileText,
   Shield,
   Layers,
-  HardDrive
+  HardDrive,
+  Download
 } from 'lucide-react';
 import { ElevationState } from '../../types/optiwin';
 
 export type NavTabId = 
   | 'dashboard'
+  | 'download'
   | 'monitor'
   | 'processes'
   | 'bottlenecks'
@@ -41,7 +43,7 @@ interface NavItem {
   id: NavTabId;
   label: string;
   icon: React.ReactNode;
-  badge?: number;
+  badge?: number | string;
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -57,6 +59,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       id: 'dashboard',
       label: 'Visão Geral do Sistema',
       icon: <LayoutDashboard size={18} />
+    },
+    {
+      id: 'download',
+      label: 'Baixar App .EXE',
+      icon: <Download size={18} />,
+      badge: '.EXE'
     },
     {
       id: 'monitor',
