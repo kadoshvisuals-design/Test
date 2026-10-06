@@ -1,0 +1,6 @@
+{
+  "name": "OptiWinX Native Windows Optimizer v2.0",
+  "description": "Production-grade native Windows desktop diagnostics, safe process optimization, EcoQoS, and bottleneck analysis utility.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
