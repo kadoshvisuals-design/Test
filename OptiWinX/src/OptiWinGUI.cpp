@@ -36,13 +36,13 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPara
         case WM_CREATE: {
             SetTimer(hWnd, IDC_TIMER_REFRESH, 1000, nullptr);
             // Create Action Buttons
-            CreateWindowA("BUTTON", "ANALISAR", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,
+            CreateWindowA("BUTTON", "ANALYZE", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,
                           30, 520, 140, 38, hWnd, (HMENU)IDC_BTN_ANALYZE, (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE), nullptr);
-            CreateWindowA("BUTTON", "SIMULAR", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
+            CreateWindowA("BUTTON", "DRY RUN", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
                           185, 520, 140, 38, hWnd, (HMENU)IDC_BTN_DRYRUN, (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE), nullptr);
-            CreateWindowA("BUTTON", "MODO JOGO", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
+            CreateWindowA("BUTTON", "GAMING MODE", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
                           340, 520, 160, 38, hWnd, (HMENU)IDC_BTN_GAMING, (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE), nullptr);
-            CreateWindowA("BUTTON", "REVERTER", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
+            CreateWindowA("BUTTON", "ROLLBACK", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
                           515, 520, 140, 38, hWnd, (HMENU)IDC_BTN_ROLLBACK, (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE), nullptr);
             break;
         }
@@ -69,10 +69,10 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPara
             // Draw Header Banner
             SetTextColor(hdc, RGB(0x00, 0xE5, 0xFF)); // Fluent Cyan Primary
             SetBkMode(hdc, TRANSPARENT);
-            TextOutA(hdc, 25, 20, "OptiWinX v2.0 - Otimizador Nativo do Windows", 44);
+            TextOutA(hdc, 25, 20, "OptiWinX Native Windows Optimizer v2.0", 39);
 
             SetTextColor(hdc, RGB(180, 180, 180));
-            TextOutA(hdc, 25, 45, "Saude: EXCELENTE  |  Plataforma: Windows 10/11 x64  |  Destino: Nativo de Producao", 82);
+            TextOutA(hdc, 25, 45, "Health: OPTIMAL  |  Platform: Windows 10/11 x64  |  Target: Production Native", 76);
 
             // Draw Hardware Section Box
             RECT hwRect = { 25, 80, 680, 175 };
@@ -80,10 +80,10 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPara
             FrameRect(hdc, &hwRect, (HBRUSH)GetStockObject(GRAY_BRUSH));
 
             SetTextColor(hdc, RGB(0x00, 0xE5, 0xFF));
-            TextOutA(hdc, 40, 95, "[ PERFIL DE TELEMETRIA DE HARDWARE ]", 36);
+            TextOutA(hdc, 40, 95, "[ HARDWARE TELEMETRY PROFILE ]", 30);
             SetTextColor(hdc, RGB(230, 230, 230));
-            TextOutA(hdc, 40, 120, "CPU: Processador x64 Multi-Core Ativo", 37);
-            TextOutA(hdc, 40, 142, "GPU: Pipeline Grafico DirectX 12 / DXGI Hardware", 48);
+            TextOutA(hdc, 40, 120, "CPU: Active Multi-Core x64 Processor Topology", 45);
+            TextOutA(hdc, 40, 142, "GPU: DXGI Direct3D 12 Hardware Graphics Pipeline", 48);
 
             // Draw Telemetry Gauges Box
             RECT gaugeRect = { 25, 190, 680, 310 };
@@ -91,11 +91,11 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPara
             FrameRect(hdc, &gaugeRect, (HBRUSH)GetStockObject(GRAY_BRUSH));
 
             SetTextColor(hdc, RGB(0x00, 0xE5, 0xFF));
-            TextOutA(hdc, 40, 205, "[ INDICADORES DE DESEMPENHO EM TEMPO REAL ]", 43);
+            TextOutA(hdc, 40, 205, "[ REAL-TIME PERFORMANCE GAUGES ]", 32);
             SetTextColor(hdc, RGB(230, 230, 230));
-            TextOutA(hdc, 40, 230, "Uso de CPU: Leitura em tempo real ativa", 39);
-            TextOutA(hdc, 40, 255, "Pressao de Memoria: Metrica adaptativa (0 - 100)", 48);
-            TextOutA(hdc, 40, 280, "Motor de Gargalo: Correlacao cruzada de telemetria", 50);
+            TextOutA(hdc, 40, 230, "CPU Load: Real-Time Polling Active", 34);
+            TextOutA(hdc, 40, 255, "Memory Pressure: 0 - 100 Adaptive Bounded Metric", 48);
+            TextOutA(hdc, 40, 280, "Bottleneck Engine: Multi-Factor Workload Correlation", 51);
 
             // Draw Process Table Panel
             RECT procRect = { 25, 325, 680, 500 };
@@ -103,13 +103,13 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPara
             FrameRect(hdc, &procRect, (HBRUSH)GetStockObject(GRAY_BRUSH));
 
             SetTextColor(hdc, RGB(0x00, 0xE5, 0xFF));
-            TextOutA(hdc, 40, 340, "[ INTELIGENCIA E GOVERNANCA DE PROCESSOS ]", 42);
+            TextOutA(hdc, 40, 340, "[ PROCESS OPTIMIZATION INTELLIGENCE ]", 37);
             SetTextColor(hdc, RGB(200, 200, 200));
-            TextOutA(hdc, 40, 370, "PID   Processo             Categoria        Prioridade     EcoQoS    Estado", 71);
-            TextOutA(hdc, 40, 395, "4120  ActiveGame.exe       Jogo Ativo       NORMAL         OFF       Protegido", 74);
-            TextOutA(hdc, 40, 420, "8244  BrowserHelper.exe    Segundo Plano    ABAIXO NORMAL  ON        Limitado", 73);
-            TextOutA(hdc, 40, 445, "512   dwm.exe              Sistema Critico  ALTA           OFF       IMUTAVEL", 73);
-            TextOutA(hdc, 40, 470, "1104  MsMpEng.exe          Seguranca        NORMAL         OFF       IMUTAVEL", 73);
+            TextOutA(hdc, 40, 370, "PID   Process              Category         Priority       EcoQoS    State", 70);
+            TextOutA(hdc, 40, 395, "4120  ActiveGame.exe       Active Game      NORMAL         OFF       Protected", 74);
+            TextOutA(hdc, 40, 420, "8244  BrowserHelper.exe    Background App   BELOW_NORMAL   ON        Throttled", 74);
+            TextOutA(hdc, 40, 445, "512   dwm.exe              Critical System  HIGH           OFF       IMMUTABLE", 74);
+            TextOutA(hdc, 40, 470, "1104  MsMpEng.exe          Security         NORMAL         OFF       IMMUTABLE", 74);
 
             EndPaint(hWnd, &ps);
             break;
@@ -119,16 +119,16 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPara
             int wmId = LOWORD(wParam);
             switch (wmId) {
                 case IDC_BTN_ANALYZE:
-                    MessageBoxA(hWnd, "Diagnostico concluido: Todos os sensores de hardware e memoria estao operando nominalmente.", "Diagnostico OptiWinX", MB_OK | MB_ICONINFORMATION);
+                    MessageBoxA(hWnd, "Analysis completed: All hardware and memory metrics operating nominally.", "OptiWinX Diagnostics", MB_OK | MB_ICONINFORMATION);
                     break;
                 case IDC_BTN_DRYRUN:
-                    MessageBoxA(hWnd, "Simulacao (Dry-Run): 0 modificacoes aplicadas. Proposta: modulacao EcoQoS em processos secundarios.", "Simulacao OptiWinX", MB_OK | MB_ICONINFORMATION);
+                    MessageBoxA(hWnd, "Dry-Run Simulation: 0 modifications made. Proposed: Background app EcoQoS throttling.", "OptiWinX Dry-Run", MB_OK | MB_ICONINFORMATION);
                     break;
                 case IDC_BTN_GAMING:
-                    MessageBoxA(hWnd, "Modo Jogo ativado: Transacoes seguras registradas e validadas no diario.", "Modo Jogo OptiWinX", MB_OK | MB_ICONINFORMATION);
+                    MessageBoxA(hWnd, "Gaming Mode engaged: Transaction records created and verified.", "OptiWinX Gaming Mode", MB_OK | MB_ICONINFORMATION);
                     break;
                 case IDC_BTN_ROLLBACK:
-                    MessageBoxA(hWnd, "Reversao executada: Todos os processos foram restaurados para os estados originais.", "Reversao OptiWinX", MB_OK | MB_ICONINFORMATION);
+                    MessageBoxA(hWnd, "Rollback executed: All active transactions successfully restored to original states.", "OptiWinX Rollback", MB_OK | MB_ICONINFORMATION);
                     break;
             }
             break;

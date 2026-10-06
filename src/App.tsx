@@ -37,7 +37,6 @@ import { BottleneckView } from './components/views/BottleneckView';
 import { GamingModeView } from './components/views/GamingModeView';
 import { StartupCleanupView } from './components/views/StartupCleanupView';
 import { CppCodeView } from './components/views/CppCodeView';
-import { DownloadView } from './components/views/DownloadView';
 import { LogsView } from './components/views/LogsView';
 
 export default function App() {
@@ -629,10 +628,6 @@ export default function App() {
               onSwitchTab={setCurrentTab}
               onTrimProcess={handleTrimProcess}
             />
-          )}
-
-          {currentTab === 'download' && (
-            <DownloadView onRunCliCommand={handleRunCliCommand} />
           )}
 
           {currentTab === 'monitor' && (
